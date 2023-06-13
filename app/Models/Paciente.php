@@ -23,6 +23,13 @@ class Paciente extends Model
         return $this->hasMany(Consulta::class,'paciente_id');
     }
 
+    public function user()
+    {
+        return $this->belongsTo(User::class,'user_id');
+    }
+
+    
+
     public function getRouteKeyName() 
     {
         return 'id';

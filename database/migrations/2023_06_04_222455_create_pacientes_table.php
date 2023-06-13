@@ -21,7 +21,6 @@ return new class extends Migration
             $table->string('csexo')->nullable();
             $table->string('ctelefono')->nullable();
             $table->string('cemail')->nullable();
-            $table->string('idusuario')->nullable();
             $table->string('cobservacion')->nullable();
             $table->boolean('lactivo')->default('1');
             $table->timestamps();
@@ -31,6 +30,13 @@ return new class extends Migration
 
             $table->foreign('paciente_id')->references('id')->on('pacientes');
         });
+
+        Schema::table('pacientes', function (Blueprint $table) {
+            $table->unsignedBigInteger('user_id')->after('lactivo');
+
+            $table->foreign('user_id')->references('id')->on('users');
+    });
+        
     }
 
     /**

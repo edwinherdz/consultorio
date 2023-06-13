@@ -20,11 +20,16 @@ return new class extends Migration
             $table->string('cpresion')->nullable();
             $table->string('cdiagnostico');
             $table->string('ctratamiento');
-            $table->string('idusuario');
             $table->String('cobservacion')->nullable();
             $table->boolean('lactivo')->default('1');
             $table->timestamps();
         });
+
+        Schema::table('consultas', function (Blueprint $table) {
+            $table->unsignedBigInteger('user_id')->after('lactivo');
+    
+            $table->foreign('user_id')->references('id')->on('users');
+    });
     }
 
     /**
