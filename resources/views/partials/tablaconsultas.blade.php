@@ -12,7 +12,7 @@
                             <tr>
                                 <th scope="col" class="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
                                     <button class="flex items-center gap-x-3 focus:outline-none">
-                                        <span>Nombre del paciente</span>
+                                        <span>Id</span>
 
                                         <svg class="h-3" viewBox="0 0 10 11" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M2.13347 0.0999756H2.98516L5.01902 4.79058H3.86226L3.45549 3.79907H1.63772L1.24366 4.79058H0.0996094L2.13347 0.0999756ZM2.54025 1.46012L1.96822 2.92196H3.11227L2.54025 1.46012Z" fill="currentColor" stroke="currentColor" stroke-width="0.1" />
@@ -23,7 +23,7 @@
                                 </th>
 
                                 <th scope="col" class="px-12 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                                    Sintomas
+                                    Nombre del paciente
                                 </th>
 
                                 <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
@@ -41,16 +41,17 @@
                     
                         <tbody class="bg-white divide-y divide-gray-200 dark:divide-gray-700 dark:bg-gray-900">
                             <tr>
+                                <td class="px-12 py-4 text-sm font-medium whitespace-nowrap">
+                                    <div class="inline px-3 py-1 text-sm font-normal rounded-full text-emerald-500 gap-x-2 bg-emerald-100/60 dark:bg-gray-800">
+                                        {{$consulta->id }}
+                                    </div>
+                                </td>
                                 <td class="px-4 py-4 text-sm  whitespace-nowrap">
                                     <div>
                                         {{$consulta->Paciente->cnombre }}  {{$consulta->Paciente->cprimerapellido }}
                                     </div>
                                 </td>
-                                <td class="px-12 py-4 text-sm font-medium whitespace-nowrap">
-                                    <div class="inline px-3 py-1 text-sm font-normal rounded-full text-emerald-500 gap-x-2 bg-emerald-100/60 dark:bg-gray-800">
-                                        {{$consulta->cdiagnostico }}
-                                    </div>
-                                </td>
+                                
                                 <td class="px-4 py-4 text-sm whitespace-nowrap">
                                     <div>
                                         <h4 class="text-gray-700 dark:text-gray-200">{{$consulta->idusuario}} </h4>
