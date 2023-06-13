@@ -64,7 +64,7 @@
                                 </td>
                                 <td class="px-4 py-4 text-sm whitespace-nowrap">
                                     <div>
-                                        <h4 class="text-gray-700 dark:text-gray-200">{{$paciente->idusuario}}</h4>
+                                        <h4 class="text-gray-700 dark:text-gray-200">{{$paciente->user->name}}</h4>
                                     </div>
                                 </td>
                                 <td class="px-4 py-4 text-sm whitespace-nowrap">

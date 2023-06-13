@@ -48,13 +48,13 @@
                                 </td>
                                 <td class="px-4 py-4 text-sm  whitespace-nowrap">
                                     <div>
-                                        {{$consulta->Paciente->cnombre }}  {{$consulta->Paciente->cprimerapellido }}
+                                        {{$consulta->Paciente->cnombre }}  {{$consulta->Paciente->cprimerapellido }} {{$consulta->Paciente->csegundoapellido }}
                                     </div>
                                 </td>
                                 
                                 <td class="px-4 py-4 text-sm whitespace-nowrap">
                                     <div>
-                                        <h4 class="text-gray-700 dark:text-gray-200">{{$consulta->idusuario}} </h4>
+                                        <h4 class="text-gray-700 dark:text-gray-200">{{$consulta->User->name}} </h4>
                                     </div>
                                 </td>
                                  <td class="px-4 py-4 text-sm whitespace-nowrap">
