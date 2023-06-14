@@ -2,12 +2,12 @@
 @vite(['resources/css/app.scss','resources/js/app.js'])
 <div class="bg-white dark:bg-gray-900">
     <div class="flex justify-center h-screen">
-        <div class="hidden bg-cover lg:block lg:w-2/3" style="background-image: url(https://images.unsplash.com/photo-1616763355603-9755a640a287?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80)">
+        <div class="hidden bg-cover lg:block lg:w-2/3" style="background-image: url(https://images.pexels.com/photos/4021775/pexels-photo-4021775.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)">
             <div class="flex items-center h-full px-20 bg-gray-900 bg-opacity-40">
                 <div>
                     <h2 class="text-4xl font-bold text-white">Consultorio Médico</h2>
 
-                    <p class="max-w-xl mt-3 text-gray-300">Lorem ipsum dolor sit, amet consectetur adipisicing elit. In autem ipsa, nulla laboriosam dolores, repellendus perferendis libero suscipit nam temporibus molestiae</p>
+                    <p class="max-w-xl mt-3 text-gray-300">Plataforma de gestión de consultas Médicas</p>
                 </div>
             </div>
         </div>
@@ -66,7 +66,7 @@
 
                     </form>
 
-                    <p class="mt-6 text-sm text-center text-gray-400">Don&#x27;t have an account yet? <a href="#" class="text-blue-500 focus:outline-none focus:underline hover:underline">Sign up</a>.</p>
+                    <p class="mt-6 text-sm text-center text-gray-400">Aún no tienes cuenta? <a href="{{ route('register') }}" class="text-blue-500 focus:outline-none focus:underline hover:underline">Registrarse</a>.</p>
                 </div>
             </div>
         </div>

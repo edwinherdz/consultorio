@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('csexo')->nullable();
             $table->string('ctelefono')->nullable();
             $table->string('cemail')->nullable();
-            $table->string('cobservacion')->nullable();
+            $table->text('cobservacion')->nullable();
             $table->boolean('lactivo')->default('1');
             $table->timestamps();
         });
@@ -45,11 +45,11 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('consultas', function (Blueprint $table) {
-            $table->dropForeign('consultas_idpaciente_foreign');
+            $table->dropForeign('consultas_paciente_id_foreign');
             $table->dropColumn('paciente_id');
 
         });
-
+       
         Schema::dropIfExists('pacientes');
     }
 };

@@ -18,9 +18,9 @@ return new class extends Migration
             $table->double('dpeso')->nullable();
             $table->string('calergias')->nullable();
             $table->string('cpresion')->nullable();
-            $table->string('cdiagnostico');
-            $table->string('ctratamiento');
-            $table->String('cobservacion')->nullable();
+            $table->text('cdiagnostico');
+            $table->text('ctratamiento');
+            $table->text('cobservacion')->nullable();
             $table->boolean('lactivo')->default('1');
             $table->timestamps();
         });
