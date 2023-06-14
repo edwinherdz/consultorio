@@ -49,5 +49,10 @@ class PacienteController extends Controller
             //'Pacientes'=>Paciente::pluck('cnombre','id')
         ]);
     }
+    public function update(Paciente $paciente , SavePacienteRequest $request)
+    {
+       $paciente->update($request->validated());
+       return redirect()->route('pacientes.show',$paciente); 
+    }
 
 }

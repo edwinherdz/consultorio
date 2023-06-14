@@ -17,7 +17,7 @@ class Consulta extends Model
     'cdiagnostico',
     'ctratamiento',
     'cobservacion',
-    'idusuario'];
+    'user_id'];
     
 
     

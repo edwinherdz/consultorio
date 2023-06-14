@@ -7,7 +7,7 @@
 @include('partials.buttonscreate')
 <form  method='POST' action=" {{route('consultas.store')}} ">
     
-    @include('consultas._form',['btnText'=>'Guardar'] )
+    @include('consultas._form',['btnText'=>'Crear','btnTextCancel'=>'Cancelar'] )
 </form>
 
 @endsection

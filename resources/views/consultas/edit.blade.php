@@ -2,7 +2,7 @@
 @section('title', 'Modificar Consulta')
 @section('content')
 
-<div class="container  col-6">
+<div class="container col-6">
 <h2 class="text-base font-semibold leading-7 text-gray-900">Editando Consulta</h2>
 </div>
 
@@ -12,7 +12,7 @@
 <form  method='POST' action=" {{route('consultas.update',$consulta)}} ">
 @method('PATCH')
     
-    @include('consultas._form',['btnText'=>'Actualizar','btnTextCancel'=>'Cancelar'] )
+    @include('consultas._form',['btnText'=>'Actualizar'] )
 </form>
 
 @endsection

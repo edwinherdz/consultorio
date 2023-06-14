@@ -23,15 +23,15 @@ class SaveConsultaRequest extends FormRequest
     {
         return [
             'paciente_id'=>'required',
-            'dtalla'=>'nullable|decimal:2,4',
-            'dpeso'=>'nullable|nullable|decimal:2,4',
+            'dtalla'=>'nullable',
+            'dpeso'=>'nullable|nullable',
             'eedad'=>'nullable|max:3',
             'calergias'=>'nullable',
             'cpresion'=>'nullable',
             'cdiagnostico'=>'required',
             'ctratamiento'=>'required',
             'cobservacion'=>'nullable',
-            'idusuario'=>'required|numeric',
+            'user_id'=>'required|numeric',
         ];
     }
 }

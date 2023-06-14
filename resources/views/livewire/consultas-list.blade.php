@@ -1,6 +1,17 @@
 <section class="container px-4 mx-auto">
 
-@include('partials.buttonsindexconsultas')
+    @include('partials.buttonsindexconsultas')
+
+    <div class="relative flex items-center mt-4 md:mt-0">
+        <span class="absolute">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mx-3 text-gray-400 dark:text-gray-600">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+            </svg>
+        </span>
+
+        <input wire:model="search" placeholder="Buscar por número de consulta" type="search" class="block w-full py-1.5 pr-5 text-gray-700 bg-white border border-gray-200 rounded-lg md:w-80 placeholder-gray-400/70 pl-11 rtl:pr-11 rtl:pl-5 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40">
+    
+    </div>
 
     <div class="flex flex-col mt-6">
         <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -28,11 +39,11 @@
 
                                 <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">Acción</th>
 
-                               
+
                             </tr>
                         </thead>
                         @forelse($consultas as $consulta)
-                    
+
                         <tbody class="bg-white divide-y divide-gray-200 dark:divide-gray-700 dark:bg-gray-900">
                             <tr>
                                 <td class="px-12 py-4 text-sm font-medium whitespace-nowrap">
@@ -42,16 +53,16 @@
                                 </td>
                                 <td class="px-4 py-4 text-sm whitespace-nowrap">
                                     <div>
-                                        {{$consulta->Paciente->cnombre }}  {{$consulta->Paciente->cprimerapellido }} {{$consulta->Paciente->csegundoapellido }}
+                                        {{$consulta->Paciente->cnombre }} {{$consulta->Paciente->cprimerapellido }} {{$consulta->Paciente->csegundoapellido }}
                                     </div>
                                 </td>
-                                
+
                                 <td class="px-4 py-4 text-sm whitespace-nowrap">
                                     <div>
                                         <h4 class="text-gray-700 dark:text-gray-200">{{$consulta->User->name}} </h4>
                                     </div>
                                 </td>
-                                 <td class="px-4 py-4 text-sm whitespace-nowrap">
+                                <td class="px-4 py-4 text-sm whitespace-nowrap">
                                     <div>
                                         <h4 class="text-gray-700 dark:text-gray-200">{{ $consulta->created_at->diffForHumans() }}</h4>
                                     </div>
@@ -87,7 +98,8 @@
     </div>
 
     <div class="mt-6 sm:flex sm:items-center sm:justify-between ">
-
     </div>
 </section>
 </table>
+{{ $consultas->links() }}
+

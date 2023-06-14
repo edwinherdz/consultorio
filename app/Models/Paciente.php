@@ -16,7 +16,7 @@ class Paciente extends Model
         'csexo',
         'ctelefono',
         'cemail',
-        'idusuario',
+        'user_id',
         'cobservacion'];
     public function consultas()
     {

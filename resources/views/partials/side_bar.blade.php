@@ -38,8 +38,3 @@
 
 </div>
 
-
-<a href="{{route('pacientes.index')}}" class=" {{ SetActive('pacientes.*') }}">
-            
-                    <span class="flex-1 ml-3 whitespace-nowrap">Pacientes</span>
-                </a>

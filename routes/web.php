@@ -4,7 +4,8 @@ use App\Http\Controllers\PacienteController;
 use App\Http\Controllers\PdfController;
 use Illuminate\Support\Facades\Route;
 use App\Http\controllers\ConsultaController;
-
+use App\Http\Livewire\ConsultasList;
+use Illuminate\Support\Facades\Auth;
 
 Route::view('/','home')->name('home')->middleware('auth');
 
@@ -13,6 +14,7 @@ Auth::routes();
 Route::resource('consulta', ConsultaController::class)->parameters(['consulta'=>'consulta'])->names('consultas')->middleware('auth');
 Route::resource('paciente', PacienteController::class)->names('pacientes')->middleware('auth');
 Route::get('/consulta/pdf/{consulta}',[PdfController::class,'pdf'])->name('consultas.pdf')->middleware('auth');
+
 
 
 // Route::get('/consulta',[ConsultaController::class,'index'])->name('consultas.index')->middleware('auth');
