@@ -12,7 +12,7 @@
 <form  method='POST' action=" {{route('consultas.update',$consulta)}} ">
 @method('PATCH')
     
-    @include('consultas._form',['btnText'=>'Actualizar'] )
+    @include('consultas._form',['btnText'=>'Actualizar','btnTextCancel'=>'Cancelar'] )
 </form>
 
 @endsection
