@@ -23,7 +23,7 @@ class Consulta extends Model
     
     public function getRouteKeyName() 
     {
-        return 'paciente_id';
+        return 'id';
     }
 
     public function paciente()
