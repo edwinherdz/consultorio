@@ -8,15 +8,17 @@
         <label for="Pacientes">Buscar paciente</label>
         <input type="search" wire:model="search" list="pacienteslist" id="Pacientes" name="paciente_id" class="block w-full px-4 py-3 leading-tight text-gray-700 border rounded appearance-none disabled focus:outline-none focus:bg-white focus:border-gray-500" id="grid-zip" type="text" placeholder="Ingrese nombre del paciente">
 
-        <datalist id="pacienteslist">
+        <datalist name="paciente_id" id="pacienteslist">
             <option disabled>Seleccionar Paciente</option>
             @foreach($pacientes as $paciente =>$dato)
-            <option value="{{$dato['id']}}">{{$dato['cnombre']}} {{$dato['cnombre']}} {{$dato['cprimerapellido']}} {{$dato['csegundoapellido']}}</option>
+            <option name="paciente_id" value="{{$dato['id']}}">{{$dato['cnombre']}} {{$dato['cnombre']}} {{$dato['cprimerapellido']}} {{$dato['csegundoapellido']}}</option>
             @endforeach
         </datalist>
 
 
         @if ($datospacientes)
+
+        <input type="hidden" name="paciente_id" id="paciente_id" value="{{$datospacientes->id}}">
         <h1 class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase">Datos del Pacientes</h1>
 
         <div class="flex flex-wrap mb-2 -mx-3">
