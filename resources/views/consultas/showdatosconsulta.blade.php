@@ -2,94 +2,95 @@
     <div class="pb-12 border-b border-gray-900/10">
         <p class="mt-1 text-sm leading-6 text-gray-700">Visualizando la información de la consulta</p>
 
-        <div class="grid grid-cols-1 mt-10 gap-x-6 gap-y-8 sm:grid-cols-6">
-
-
-            <div class="sm:col-span-2 sm:col-start-1">
-                <label for="city" class="block text-sm font-medium leading-6 text-gray-900">Nombre(s) del Paciente</label>
-                <div class="mt-2">
-                    <input readonly id="" value="{{$consulta->Paciente->cnombre}}" type="text" name="cnombre" autocomplete="address-level2" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 bg-zinc-200	">
-                </div>
+        <div class="flex flex-wrap mb-2 -mx-3">
+            <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
+                <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-city">
+                    Id Consulta
+                </label>
+                <input disabled name="" value="{{ $consulta->id}}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="text" >
             </div>
-            <div class="sm:col-span-2 ">
-                <label for="city" class="block text-sm font-medium leading-6 text-gray-900">Primer Apellido</label>
-                <div class="mt-2">
-                    <input readonly value="{{$consulta->Paciente->cprimerapellido}}" type="text" name="cprimerapellido" id="city" autocomplete="address-level2" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6  bg-zinc-200	">
-                </div>
+            <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
+                <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-city">
+                    Nombre completo del paciente
+                </label>
+                <input disabled name="" value="{{ $consulta->paciente->cnombre .' '.$consulta->paciente->cprimerapellido.' '.$consulta->paciente->csegundoapellido }}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="text" >
             </div>
-            <div class="sm:col-span-2 ">
-                <label for="city" class="block text-sm font-medium leading-6 text-gray-900">Segundo Apellido</label>
-                <div class="mt-2">
-                    <input readonly value="{{$consulta->Paciente->csegundoapellido}}" type="text" name="csegundoapellido" id="city" autocomplete="address-level2" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6  bg-zinc-200	">
-                </div>
+            <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
+                <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-city">
+                    Fecha de Nacimiento
+                </label>
+                <input disabled name="" value="{{ date('d-m-Y', strtotime($consulta->paciente->dfechanacimiento))}}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none disabled focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="text" >
             </div>
-            <div class="sm:col-span-2 ">
-                <label for="city" class="block text-sm font-medium leading-6 text-gray-900">Fecha de Nacimiento</label>
-                <div class="mt-2">
-                    <input readonly value="{{$consulta->Paciente->dfechanacimiento}}" type="date" name="dfechanacimiento" id="city" autocomplete="address-level2" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6  bg-zinc-200	">
-                </div>
+            <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
+                <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-zip">
+                    Sexo
+                </label>
+                <input disabled name="" value="{{ $consulta->paciente->csexo}}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none disabled focus:outline-none focus:bg-white focus:border-gray-500" id="grid-zip" type="text" >
             </div>
-            <div class="sm:col-span-2 ">
-                <label for="city" class="block text-sm font-medium leading-6 text-gray-900">Sexo</label>
-                <div class="mt-2">
-                    <input readonly value="{{$consulta->paciente->csexo}}" type="email" name="csexo" autocomplete="address-level2" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6  bg-zinc-200	">
-                </div>
+            <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
+                <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-zip">
+                    Email
+                </label>
+                <input disabled name="" value="{{ $consulta->paciente->cemail}}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none disabled focus:outline-none focus:bg-white focus:border-gray-500" id="grid-zip" type="text" >
             </div>
-            <div class="sm:col-span-2 ">
-                <label for="city" class="block text-sm font-medium leading-6 text-gray-900">Edad</label>
-                <div class="mt-2">
-                    <input readonly value="{{$consulta->eedad}}" type="email" name="cemail" id="cemail" autocomplete="address-level2" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6  bg-zinc-200	">
-                </div>
+            <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
+                <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-zip">
+                    Edad
+                </label>
+                <input disabled name="" value="{{ $consulta->eedad}}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none disabled focus:outline-none focus:bg-white focus:border-gray-500" id="grid-zip" type="text" >
             </div>
-            <div class="sm:col-span-2 ">
-                <label for="city" class="block text-sm font-medium leading-6 text-gray-900">Peso del Paciente</label>
-                <div class="mt-2">
-                    <input readonly pattern="[0-9]{9}" value="{{$consulta->dpeso}}" type="number" name="ctelefono" id="city" autocomplete="address-level2" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6  bg-zinc-200	">
-                </div>
+            <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
+                <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-zip">
+                    Peso del Paciente
+                </label>
+                <input disabled name="" value="{{ $consulta->dpeso}}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none disabled focus:outline-none focus:bg-white focus:border-gray-500" id="grid-zip" type="text" >
             </div>
-
-            <div class="sm:col-span-2">
-                <label for="region" class="block text-sm font-medium leading-6 text-gray-900">Alergias del Paciente</label>
-                <div class="mt-2">
-                    <input readonly id="cusuario" value="{{$consulta->calergias}}" type="text" name="idusuario" autocomplete="address-level1" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6  bg-zinc-200	">
-                </div>
+            <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
+                <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-city">
+                    Alergias del Paciente
+                </label>
+                <input disabled name="" value="{{ $consulta->calergias }}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="text" >
             </div>
-            <div class="sm:col-span-2">
-                <label for="region" class="block text-sm font-medium leading-6 text-gray-900">Registro</label>
-                <div class="mt-2">
-                    <input readonly id="cusuario" value="{{auth()->user()->name}}" type="text" name="idusuario" autocomplete="address-level1" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6  bg-zinc-200	">
-                </div>
+            <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
+                <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-zip">
+                    Usuario
+                </label>
+                <input disabled name="" value="{{auth()->user()->name}}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none disabled focus:outline-none focus:bg-white focus:border-gray-500" id="grid-zip" type="text" >
             </div>
-            <div class="sm:col-span-5">
-                <label for="region" class="block text-sm font-medium leading-6 text-gray-900">Diagnostico</label>
-                <div class="mt-2">
-                    <textarea readonly type="text" name="cdiagnostico" autocomplete="address-level1" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6  bg-zinc-200	">{{ old('cdescripcion',$consulta->cdiagnostico ) }}</textarea>
-                </div>
+            <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
+                <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-zip">
+                    Diagnostico del paciente
+                </label>
+                <textarea disabled name="" value="" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none disabled focus:outline-none focus:bg-white focus:border-gray-500" id="grid-zip" type="text" >{{ $consulta->cdiagnostico}}</textarea>
             </div>
-            <div class="sm:col-span-5">
-                <label for="region" class="block text-sm font-medium leading-6 text-gray-900">Tratamiento</label>
-                <div class="mt-2">
-                    <textarea readonly type="text" name="ctratamiento" autocomplete="address-level1" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6  bg-zinc-200	">{{ old('cdescripcion',$consulta->ctratamiento ) }}</textarea>
-                </div>
+            <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
+                <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-zip">
+                    Tratamiento del paciente
+                </label>
+                <textarea disabled name="" value="" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none disabled focus:outline-none focus:bg-white focus:border-gray-500" id="grid-zip" type="text" >{{ $consulta->ctratamiento}}</textarea>
             </div>
-            <div class="sm:col-span-5">
-                <label for="region" class="block text-sm font-medium leading-6 text-gray-900">Observaciones</label>
-                <div class="mt-2">
-                    <textarea readonly type="text" name="cobservacion" autocomplete="address-level1" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6  bg-zinc-200	">{{ old('cdescripcion',$consulta->cobservacion ) }}</textarea>
-                </div>
+            <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
+                <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-zip">
+                    Observaciones adicionales
+                </label>
+                <textarea disabled name="" value="" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none disabled focus:outline-none focus:bg-white focus:border-gray-500" id="grid-zip" type="text" >{{ $consulta->cobservacion}}</textarea>
             </div>
-            <div class="sm:col-span-2 sm:col-start-1">
-                <label for="region" class="block text-sm font-medium leading-6 text-gray-900">Fecha de creación</label>
-                <div class="mt-2">
-                    <input readonly id="cusuario" value="{{$consulta->created_at}}" type="text" name="idusuario" autocomplete="address-level1" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6  bg-zinc-200	">
-                </div>
+            <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
+                <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-zip">
+                    Fecha de creación
+                </label>
+                <input disabled name="" value="{{ $consulta->paciente->created_at}}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none disabled focus:outline-none focus:bg-white focus:border-gray-500" id="grid-zip" type="text" >
             </div>
-            <div class="sm:col-span-2">
-                <label for="region" class="block text-sm font-medium leading-6 text-gray-900">Fecha de Modificación</label>
-                <div class="mt-2">
-                    <input readonly id="cusuario" value="{{$consulta->updated_at}}" type="text" name="idusuario" autocomplete="address-level1" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6  bg-zinc-200	">
-                </div>
+            <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
+                <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-zip">
+                    Fecha de Modificación
+                </label>
+                <input disabled name="" value="{{ $consulta->paciente->updated_at}}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none disabled focus:outline-none focus:bg-white focus:border-gray-500" id="grid-zip" type="text" >
             </div>
+        </div>
+    
+        
+    
         </div>
     </div>
 </div>

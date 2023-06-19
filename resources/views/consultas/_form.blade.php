@@ -12,42 +12,51 @@
 
         @else
 
-        <div class="sm:col-span-2 sm:col-start-1">
-            <label for="city" class="block text-sm font-medium leading-6 text-gray-900">Nombre del Paciente</label>
-            <div class="mt-2">
-                <input name="nombrepaciente" value="{{$consulta->Paciente->cnombre}} {{$consulta->Paciente->cprimerapellido}} {{$consulta->Paciente->csegundoapllido}}" readonly type="text" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 bg-zinc-200	">
+        <div class="flex flex-wrap mb-2 -mx-3">
+            <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
+                <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-city">
+                    Nombre
+                </label>
+                <input disabled name="" value="{{ $consulta->paciente->cnombre .' '.$consulta->paciente->cprimerapellido.' '.$consulta->paciente->csegundoapellido }}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="text" >
             </div>
-            <input name="paciente_id" id="paciente_id" value="{{$consulta->Paciente->id}}" readonly type="hidden" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 bg-zinc-200	">
-        </div>
-        <div class="sm:col-span-1">
-            <label for="city" class="block text-sm font-medium leading-6 text-gray-900">Fecha de Nacimiento</label>
-            <div class="mt-2">
-                <input value="{{$consulta->Paciente->dfechanacimiento}}" readonly type="date" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 bg-zinc-200	">
+            <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
+                <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-city">
+                    Fecha de Nacimiento
+                </label>
+                <input disabled name="" value="{{ date('d-m-Y', strtotime($consulta->paciente->dfechanacimiento))}}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none disabled focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="text" >
             </div>
-        </div>
-        <div class="sm:col-span-1">
-            <label for="region" class="block text-sm font-medium leading-6 text-gray-900">Sexo</label>
-            <div class="mt-2">
-                <input value="{{$consulta->Paciente->csexo}}" readonly type="text" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 bg-zinc-200">
+            <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
+                <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-zip">
+                    Sexo
+                </label>
+                <input disabled name="" value="{{ $consulta->paciente->csexo}}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none disabled focus:outline-none focus:bg-white focus:border-gray-500" id="grid-zip" type="text" >
+            </div>
+            <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
+                <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-zip">
+                    Email
+                </label>
+                <input disabled name="" value="{{ $consulta->paciente->cemail}}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none disabled focus:outline-none focus:bg-white focus:border-gray-500" id="grid-zip" type="text" >
             </div>
         </div>
 
         @endif
 
-
         <div class="flex flex-wrap mb-2 -mx-3">
+
             <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
                 <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-city">
                     Edad
                 </label>
-                <input name="eedad" value="{{ old('eedad',$consulta->eedad ) }}" class="block w-full px-4 py-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" type="text" placeholder="Indique la edad del paciente">
+                <input type="hidden" name="paciente_id" value="{{ old('paciente_id',$consulta->paciente_id ) }}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" type="text" placeholder="Indique la edad del paciente">
+
+                <input  name="eedad" value="{{ old('eedad',$consulta->eedad ) }}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" type="text" placeholder="Indique la edad del paciente">
             </div>
             <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
                 <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-state">
                     Sexo
                 </label>
                 <div class="relative">
-                    <select class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500">
+                    <select class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500">
                         <option>Masculino</option>
                         <option>Femenino</option>
                     </select>
@@ -61,7 +70,7 @@
                 <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-zip">
                     Presión Arterial
                 </label>
-                <input name="cpresion" value="{{ old('eedad',$consulta->cpresion ) }}" class="block w-full px-4 py-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" type="text" placeholder="Indique la presión arterial del paciente">
+                <input name="cpresion" value="{{ old('eedad',$consulta->cpresion ) }}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" type="text" placeholder="Indique la presión arterial del paciente">
             </div>
         </div>
         <div class="flex flex-wrap mb-2 -mx-3">
@@ -69,19 +78,19 @@
                 <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-city">
                     Talla Corporal
                 </label>
-                <input name="dtalla" value="{{ old('dtalla',$consulta->dtalla ) }}" class="block w-full px-4 py-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="text" placeholder="Indique la talla corporal del paciente">
+                <input name="dtalla" value="{{ old('dtalla',$consulta->dtalla ) }}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="text" placeholder="Indique la talla corporal del paciente">
             </div>
             <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
                 <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-city">
                     Peso (Kg)
                 </label>
-                <input name="dpeso" value="{{ old('dpeso',$consulta->dpeso ) }}" class="block w-full px-4 py-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="text" placeholder="Indique el peso del Paciente">
+                <input name="dpeso" value="{{ old('dpeso',$consulta->dpeso ) }}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="text" placeholder="Indique el peso del Paciente">
             </div>
             <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
                 <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-zip">
                     Alergias
                 </label>
-                <input name="caleergias" value="{{ old('caleergias',$consulta->calergia ) }}" class="block w-full px-4 py-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="grid-zip" type="text" placeholder="indique la(s) alergia(s) del paciente">
+                <input name="caleergias" value="{{ old('caleergias',$consulta->ccalergia ) }}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="grid-zip" type="text" placeholder="indique la(s) alergia(s) del paciente">
             </div>
         </div>
         <div class="flex flex-wrap mb-2 -mx-3">
@@ -89,19 +98,19 @@
                 <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-city">
                     Diagnostico
                 </label>
-                <textarea name="cdiagnostico" value="{{ old('cdiagnostico',$consulta->cdiagnostico ) }}" class="block w-full px-4 py-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="text" placeholder="indique el diagnostico del paciente"></textarea>
+                <textarea name="cdiagnostico" value="" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="text" placeholder="indique el diagnostico del paciente">{{ old('cdiagnostico',$consulta->cdiagnostico ) }}</textarea>
             </div>
             <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
                 <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-city">
                     Tratamiento
                 </label>
-                <textarea name="ctratamiento" value="{{ old('ctratamiento',$consulta->ctratamiento ) }}" class="block w-full px-4 py-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="text" placeholder="Indique el tratamiento para el paciente"></textarea>
+                <textarea name="ctratamiento" value="" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="text" placeholder="Indique el tratamiento para el paciente">{{ old('ctratamiento',$consulta->ctratamiento ) }}</textarea>
             </div>
             <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
                 <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-zip">
                     Observaciones adicionales
                 </label>
-                <textarea name="cobservacion" value="{{ old('cobservacion',$consulta->cobservacion ) }}" class="block w-full px-4 py-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="grid-zip" type="text" placeholder="Indique alguna observación adicional"></textarea>
+                <textarea name="cobservacion" value="" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="grid-zip" type="text" placeholder="Indique alguna observación adicional">{{ old('cobservacion',$consulta->cobservacion ) }}</textarea>
             </div>
             <input hidden  value="{{ old('user_id', auth()->user()->id ) }}" type="number" name="user_id" id="idusuario" >
 
