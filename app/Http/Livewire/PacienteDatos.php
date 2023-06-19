@@ -13,11 +13,10 @@ class PacienteDatos extends Component
     public function render()
     {
         
-    
-            
         $pacientes=Paciente::all();
         $datospacientes=Paciente::find($this->search);
 
             return view('livewire.paciente-datos',compact('datospacientes','pacientes'));
     }
+    
 }
