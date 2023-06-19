@@ -90,7 +90,7 @@
                 <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-zip">
                     Alergias
                 </label>
-                <input name="caleergias" value="{{ old('caleergias',$consulta->ccalergia ) }}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="grid-zip" type="text" placeholder="indique la(s) alergia(s) del paciente">
+                <input name="calergias" value="{{ old('calergias',$consulta->calergias ) }}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="grid-zip" type="text" placeholder="indique la(s) alergia(s) del paciente">
             </div>
         </div>
         <div class="flex flex-wrap mb-2 -mx-3">

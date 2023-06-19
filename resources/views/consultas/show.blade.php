@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title','Consulta | ' . $consulta->cnombrepaciente)
+@section('title','Consulta | ' . $consulta->paciente->cnombre ." ". $consulta->paciente->cprimerapellido." ". $consulta->paciente->csegundoapellido)
 
 @section('content')
 

@@ -1,5 +1,5 @@
 @extends('layout')
-@section('title', 'Modificar Consulta')
+@section('title', 'Modificar Consulta'." ". $consulta->id)
 @section('content')
 
 <div class="container col-6">

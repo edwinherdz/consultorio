@@ -93,7 +93,7 @@
 
                                                     </ul>
                                                 </li>
-                                                <li>
+                                                {{-- <li>
                                                     <ul class="transition-colors duration-200 text-sky-500 dark:hover:text-indigo-500 dark:text-gray-300 hover:text-indigo-500 focus:outline-none" onclick="window.open('{{route('consultas.pdf',$consulta)}}', '_blank');">
                                                         <button class="transition-colors duration-200 text-sky-500 dark:hover:text-indigo-500 dark:text-gray-300 hover:text-indigo-500 focus:outline-none" >
 
@@ -103,7 +103,7 @@
                                                             Imprimir
                                                         </button>
                                                     </ul>
-                                                </li>
+                                                </li> --}}
                                             </ul>
                                         </div>
                                     </td>
