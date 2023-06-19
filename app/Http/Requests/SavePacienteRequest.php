@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use \Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class SavePacienteRequest extends FormRequest
@@ -19,7 +20,7 @@ class SavePacienteRequest extends FormRequest
      *
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array|string>
      */
-    public function rules(): array
+    public function rules()
     {
         return [
             'cnombre'=>'required',
@@ -27,7 +28,8 @@ class SavePacienteRequest extends FormRequest
             'csegundoapellido'=>'required',
             'dfechanacimiento'=>'required',
             'csexo'=>'required',
-            'cemail'=>['unique:pacientes,cemail','nullable'],
+            'cemail'=>['required',
+            Rule::unique('pacientes')->ignore($this->route('paciente'))],
             'user_id'=>'required',
             'ctelefono'=>'nullable','max:10',
             'cobservacion'=>'nullable','max:500',
