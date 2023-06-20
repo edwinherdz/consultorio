@@ -68,8 +68,8 @@
                                     </td>
                                     <td class="px-4 py-4 text-sm whitespace-nowrap">
                                         <div class="flex items-center gap-x-6">
-                                            <ul>
-                                                <li>
+                                            
+                                                
                                                     <ul class="transition-colors duration-200 text-sky-500 dark:hover:text-indigo-500 dark:text-gray-300 hover:text-indigo-500 focus:outline-none" onclick="window.location.href='{{route('consultas.show',$consulta)}}'">
                                                         <button class="transition-colors duration-200 text-sky-500 dark:hover:text-indigo-500 dark:text-gray-300 hover:text-indigo-500 focus:outline-none" >
                                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -78,9 +78,6 @@
                                                             Visualizar
                                                         </button>
                                                     </ul>
-                                                </li>
-
-                                                <li>
                                                     <ul class="transition-colors duration-200 text-sky-500 dark:hover:text-indigo-500 dark:text-gray-300 hover:text-indigo-500 focus:outline-none" onclick="window.location.href='{{route('consultas.edit',$consulta)}}'">
 
                                                         <button class="transition-colors duration-200 text-sky-500 dark:hover:text-indigo-500 dark:text-gray-300 hover:text-indigo-500 focus:outline-none" >
@@ -92,7 +89,7 @@
                                                         </button>
 
                                                     </ul>
-                                                </li>
+                                                
                                                 {{-- <li>
                                                     <ul class="transition-colors duration-200 text-sky-500 dark:hover:text-indigo-500 dark:text-gray-300 hover:text-indigo-500 focus:outline-none" onclick="window.open('{{route('consultas.pdf',$consulta)}}', '_blank');">
                                                         <button class="transition-colors duration-200 text-sky-500 dark:hover:text-indigo-500 dark:text-gray-300 hover:text-indigo-500 focus:outline-none" >
@@ -104,7 +101,7 @@
                                                         </button>
                                                     </ul>
                                                 </li> --}}
-                                            </ul>
+                                            
                                         </div>
                                     </td>
 
