@@ -127,6 +127,6 @@
         </div>
     </section>
     </table>
-    {{-- {{ $consultas->links() }} --}}
+    {{ $consultas->links() }}
 
 </div>

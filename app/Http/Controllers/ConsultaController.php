@@ -37,7 +37,7 @@ class ConsultaController extends Controller
 
     public function store(SaveConsultaRequest $request)
     {
-        
+    
         Consulta::create($request->validated());
          return redirect()->route('consultas.index');
     }
@@ -45,7 +45,7 @@ class ConsultaController extends Controller
 
     public function edit(Consulta $consulta)
     {
-    
+        
         return view('consultas.edit',[
             'consulta'=> $consulta,
             'pacientes' =>Paciente::all(),

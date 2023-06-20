@@ -27,7 +27,7 @@ class ConsultasList extends Component
             'LIKE',
             '%'.$this->search.'%')
             ->orderBy($this->sort,$this->direction)
-            ->get();
+            ->paginate(10);
 
         // $consultas = DB::table('consultas')
         // ->join('pacientes',function(JoinClause $join){
