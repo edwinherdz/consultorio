@@ -1,8 +1,11 @@
 @extends('layout')
 @section('title', 'Registros de Pacientes')
 @section('content')
-@include('partials.tablapacientes')
 
-{{ $pacientes->links() }}
+@livewire('paciente-list')
+
+{{-- @include('partials.tablapacientes') --}}
+
+
 
 @endsection

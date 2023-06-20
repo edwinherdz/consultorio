@@ -12,10 +12,7 @@ class PacienteController extends Controller
     public function index()
     {
     
-        return view('pacientes.index',[
-            'pacientes'=>Paciente::withCount('consultas')->latest()->paginate(),
-
-    ]);
+        return view('pacientes.index');
     }
 
 
