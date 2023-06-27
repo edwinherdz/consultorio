@@ -10,14 +10,13 @@
                 </button>
                 <a href="" class="flex ml-2 md:mr-24">
                     <img src="https://flowbite.com/docs/images/logo.svg" class="h-8 mr-3" alt="FlowBite Logo" />
-                    <span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">Consultorio</span>
+                    <span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">{{auth()->user()->Consultorio->cnombreconsultorio}}</span>
                 </a>
             </div>
             <div class="relative inline-block text-left">
                 <div class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
                     <div id="menu-button" aria-expanded="true" aria-haspopup="true">
                         Hola {{ auth()->user()->name }}
-
                     </div>
                     <div id="menu-button" aria-expanded="true" aria-haspopup="true">
                         <a href="#" onclick="event.preventDefault();

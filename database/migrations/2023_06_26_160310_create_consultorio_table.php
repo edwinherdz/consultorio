@@ -11,14 +11,20 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('dato_empresas', function (Blueprint $table) {
+        Schema::create('consultorios', function (Blueprint $table) {
             $table->id();
             $table->longText('cnombreconsultorio');
-            $table->mediumText('cdescripción')->nullable();
+            $table->mediumText('cdescripcion')->nullable();
             $table->mediumText('cdireccion')->nullable();
             $table->text('ctelefono')->nullable();
             $table->longText('cemail')->nullable();
             $table->timestamps();
+        });
+
+        Schema::table('users', function (Blueprint $table) {
+            $table->unsignedBigInteger('consultorio_id')->nullable()->after('email');
+
+            $table->foreign('consultorio_id')->references('id')->on('consultorios');
         });
     }
 
@@ -27,6 +33,12 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('dato_empresas');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropForeign('users_consultorio_id_foreign');
+            $table->dropColumn('consultorio_id');
+
+        });
+       
+        Schema::dropIfExists('consultorios');
     }
 };

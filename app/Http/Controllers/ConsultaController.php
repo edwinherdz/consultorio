@@ -49,7 +49,6 @@ class ConsultaController extends Controller
         return view('consultas.edit',[
             'consulta'=> $consulta,
             'pacientes' =>Paciente::all(),
-            //'Pacientes'=>Paciente::pluck('cnombre','id')
         ]);
     }
 
