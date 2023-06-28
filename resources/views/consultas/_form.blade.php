@@ -38,6 +38,7 @@
                 <input disabled name="" value="{{ $consulta->paciente->cemail}}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none disabled focus:outline-none focus:bg-white focus:border-gray-500" id="grid-zip" type="text" >
             </div>
         </div>
+        <input type="hidden" name="paciente_id" value="{{ old('paciente_id',$consulta->paciente_id ) }}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"  >
 
         @endif
 
@@ -47,7 +48,6 @@
                 <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-city">
                     Edad
                 </label>
-                <input type="hidden" name="paciente_id" value="{{ old('paciente_id',$consulta->paciente_id ) }}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"  >
 
                 <input  name="eedad" value="{{ old('eedad',$consulta->eedad ) }}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" type="text" placeholder="Indique la edad del paciente">
             </div>

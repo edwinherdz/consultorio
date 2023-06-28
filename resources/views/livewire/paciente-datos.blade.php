@@ -11,7 +11,7 @@
         <datalist name="paciente_id" id="pacienteslist">
             <option disabled>Seleccionar Paciente</option>
             @foreach($pacientes as $paciente =>$dato)
-            <option name="paciente_id" value="{{$dato['id']}}">{{$dato['cnombre']}} {{$dato['cnombre']}} {{$dato['cprimerapellido']}} {{$dato['csegundoapellido']}}</option>
+            <option  value="{{$dato['id']}}">{{$dato['cnombre']}} {{$dato['cnombre']}} {{$dato['cprimerapellido']}} {{$dato['csegundoapellido']}}</option>
             @endforeach
         </datalist>
 
@@ -26,13 +26,13 @@
                 <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-city">
                     Nombre
                 </label>
-                <input disabled name="" value="{{ $datospacientes->cnombre .' '.$datospacientes->cprimerapellido.' '.$datospacientes->csegundoapellido }}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="text" placeholder="Indique la talla corporal del paciente">
+                <input disabled name="" value="{{ $datospacientes->cnombre .' '.$datospacientes->cprimerapellido.' '.$datospacientes->csegundoapellido }}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"  type="text">
             </div>
             <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
                 <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-city">
                     Fecha de Nacimiento
                 </label>
-                <input disabled name="" value="{{ date('d-m-Y', strtotime($datospacientes->dfechanacimiento))}}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none disabled focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="text" placeholder="Indique el peso del Paciente">
+                <input disabled name="" value="{{ date('d-m-Y', strtotime($datospacientes->dfechanacimiento))}}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none disabled focus:outline-none focus:bg-white focus:border-gray-500"  type="text" >
             </div>
             <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
                 <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-zip">

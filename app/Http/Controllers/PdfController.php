@@ -15,4 +15,13 @@ class PdfController extends Controller
         ]);
         return $pdf->stream();
     }
+
+    public function pdflist()
+    {
+        $consultaslist =Consulta::all();
+         $pdf= Pdf::loadView('pdf.pdflist', [
+            'consultas'=>$consultaslist
+        ]);
+        return $pdf->stream();
+    }
 }
