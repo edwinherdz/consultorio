@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\SaveConsultaRequest;
 use App\Models\Consulta;
 use App\Models\Paciente;
-use App\Models\User;
-use Illuminate\Http\Request;
+
 
 class ConsultaController extends Controller
 {
