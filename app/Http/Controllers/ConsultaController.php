@@ -11,9 +11,7 @@ class ConsultaController extends Controller
 {
     public function index()
     {
-        return view('consultas.index',[
-            'consultas'=>Consulta::latest()->paginate()
-    ]);
+        return view('consultas.index');
     }
 
     public function show(Consulta $consulta)
