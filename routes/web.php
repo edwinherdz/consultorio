@@ -11,9 +11,8 @@ Route::view('/','home')->name('home')->middleware('auth');
 
 Auth::routes();
 Route::get('/consulta/pdf/consultaslist',[PdfController::class,'pdflist'])->name('consultas.pdflist')->middleware('auth');
-
-Route::get('/datosconsultorio',[ ConsultorioController::class,'index'])->name('consultorio.index')->middleware('auth');
 Route::resource('consulta', ConsultaController::class)->parameters(['consulta'=>'consulta'])->names('consultas')->middleware('auth');
+Route::get('/datosconsultorio',[ ConsultorioController::class,'index'])->name('consultorio.index')->middleware('auth');
 Route::resource('paciente', PacienteController::class)->names('pacientes')->middleware('auth');
 Route::get('/consulta/pdf/{consulta}',[PdfController::class,'pdf'])->name('consultas.pdf')->middleware('auth');
 
