@@ -3,7 +3,7 @@
 use App\Http\Controllers\PacienteController;
 use App\Http\Controllers\PdfController;
 use Illuminate\Support\Facades\Route;
-use App\Http\controllers\ConsultaController;
+use app\Http\controllers\ConsultaController;
 use App\Http\Controllers\ConsultorioController;
 use Illuminate\Support\Facades\Auth;
 
