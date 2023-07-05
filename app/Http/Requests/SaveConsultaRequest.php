@@ -23,9 +23,9 @@ class SaveConsultaRequest extends FormRequest
     {
         return [
             'paciente_id'=>'required',
-            'dtalla'=>'nullable',
-            'dpeso'=>'nullable|nullable',
-            'eedad'=>'nullable|max:3',
+            'dtalla'=>'nullable|numeric',
+            'dpeso'=>'nullable|numeric',
+            'eedad'=>'nullable|numeric',
             'calergias'=>'nullable',
             'cpresion'=>'nullable',
             'cdiagnostico'=>'required',

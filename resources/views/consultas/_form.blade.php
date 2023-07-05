@@ -49,19 +49,19 @@
                     Edad
                 </label>
 
-                <input  name="eedad" value="{{ old('eedad',$consulta->eedad ) }}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" type="text" placeholder="Indique la edad del paciente">
+                <input  name="eedad" value="{{ old('eedad',$consulta->eedad ) }}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" type="number" placeholder="Indique la edad del paciente">
             </div>
             <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
                 <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-zip">
                     Presión Arterial
                 </label>
-                <input name="cpresion" value="{{ old('cpresion',$consulta->cpresion ) }}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" type="text" placeholder="Indique la presión arterial del paciente">
+                <input name="cpresion" value="{{ old('cpresion',$consulta->cpresion ) }}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" type="number" placeholder="Indique la presión arterial del paciente">
             </div>
             <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
                 <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-city">
                     Talla Corporal
                 </label>
-                <input  name="dtalla" value="{{ old('dtalla',$consulta->dtalla ) }}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" type="text" placeholder="Indique la edad del paciente">
+                <input  name="dtalla" value="{{ old('dtalla',$consulta->dtalla ) }}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" type="number" placeholder="Indique la edad del paciente">
             </div>
         </div>
         <div class="flex flex-wrap mb-2 -mx-3">
@@ -70,7 +70,7 @@
                 <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-city">
                     Peso (Kg)
                 </label>
-                <input name="dpeso" value="{{ old('dpeso',$consulta->dpeso ) }}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="text" placeholder="Indique el peso del Paciente">
+                <input name="dpeso" value="{{ old('dpeso',$consulta->dpeso ) }}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="number" placeholder="Indique el peso del Paciente">
             </div>
             <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
                 <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-zip">
