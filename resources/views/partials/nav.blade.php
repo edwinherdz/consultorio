@@ -26,7 +26,7 @@
                      </div>
                      <div id="menu-button" aria-expanded="true" aria-haspopup="true">
                          <a href="#" onclick="event.preventDefault();
-                        document.getElementById('logout-form').submit();""
+                        document.getElementById('logout-form').submit();"
                         >Cerrar Sesión</a>
                     </div>
 
@@ -36,6 +36,6 @@
         </div>
 </nav>
 
-<form id=" logout-form" action=" {{ route('logout') }}" method="POST" style="diplay:none">
+<form id="logout-form" action=" {{ route('logout') }}" method="POST" style="diplay:none">
                              @csrf
                              </form>
