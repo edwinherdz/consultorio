@@ -10,7 +10,13 @@
                 </button>
                 <a href="" class="flex ml-2 md:mr-24">
                     <img src="https://img.icons8.com/?size=512&id=65094&format=png" class="h-8 mr-3" alt="FlowBite Logo" />
-                    <span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">{{auth()->user()->Consultorio->cnombreconsultorio}}</span>
+                    <span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">
+                        @if(isset(auth()->user()->Consultorio->cnombreconsultorio))
+                        {{auth()->user()->Consultorio->cnombreconsultorio}}
+                        @else
+                        Mi Consultorio
+                        @endif
+                    </span>
                 </a>
             </div>
             <div class="relative inline-block text-left">
