@@ -3,9 +3,11 @@
 use App\Http\Controllers\PacienteController;
 use App\Http\Controllers\PdfController;
 use Illuminate\Support\Facades\Route;
-use app\Http\controllers\ConsultaController;
+use App\Http\Controllers\ConsultaController;
 use App\Http\Controllers\ConsultorioController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Controller;
+
 
 Route::view('/','home')->name('home')->middleware('auth');
 
