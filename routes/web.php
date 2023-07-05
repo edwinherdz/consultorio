@@ -7,7 +7,7 @@ use App\Http\Controllers\ConsultaController;
 use App\Http\Controllers\ConsultorioController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
-
+use App\Http\Controllers\UserController;
 
 Route::view('/','home')->name('home')->middleware('auth');
 
@@ -18,6 +18,8 @@ Route::resource('consulta',ConsultaController::class)->parameters(['consulta'=>'
 Route::get('/consulta/pdf/consultaslist',[PdfController::class,'pdflist'])->name('consultas.pdflist')->middleware('auth');
 Route::resource('paciente',PacienteController::class)->names('pacientes')->middleware('auth');
 Route::get('/consulta/pdf/{consulta}',[PdfController::class,'pdf'])->name('consultas.pdf')->middleware('auth');
+Route::get('/usuario/{usuario}',[UserController::class,'show'])->name('usuario.show')->middleware('auth');
+Route::get('/usuario/edit/{usuario}',[UserController::class,'update'])->name('usuario.update')->middleware('auth');
 
 
 

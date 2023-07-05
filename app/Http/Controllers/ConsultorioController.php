@@ -9,7 +9,7 @@ class ConsultorioController extends Controller
 {
     public function index() {
 
-        $consultorio=Consultorio::find(1);
+        $consultorio=Consultorio::find(2);
 
         return view('configuraciones.configuraciones',compact('consultorio'));
         

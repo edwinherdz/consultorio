@@ -19,10 +19,10 @@
                      </span>
                  </a>
              </div>
-             <div class="relative inline-block text-left">
+             <div class="">
                  <div class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
-                     <div id="menu-button" aria-expanded="true" aria-haspopup="true">
-                         Hola {{ auth()->user()->name }}
+                     <div id="menu-button" aria-expanded="true" aria-haspopup="true" class="bg-gray-700">
+                         <a href="{{route('usuario.show',auth()->user()->id)}}">Hola {{ auth()->user()->name }}</a>
                      </div>
                      <div id="menu-button" aria-expanded="true" aria-haspopup="true">
                          <a href="#" onclick="event.preventDefault();
