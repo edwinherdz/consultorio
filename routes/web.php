@@ -18,8 +18,12 @@ Route::resource('consulta',ConsultaController::class)->parameters(['consulta'=>'
 Route::get('/consulta/pdf/consultaslist',[PdfController::class,'pdflist'])->name('consultas.pdflist')->middleware('auth');
 Route::resource('paciente',PacienteController::class)->names('pacientes')->middleware('auth');
 Route::get('/consulta/pdf/{consulta}',[PdfController::class,'pdf'])->name('consultas.pdf')->middleware('auth');
-Route::get('/usuario/{usuario}',[UserController::class,'show'])->name('usuario.show')->middleware('auth');
-Route::get('/usuario/edit/{usuario}',[UserController::class,'update'])->name('usuario.update')->middleware('auth');
+Route::get('/usuario/show/{usuario}',[UserController::class,'show'])->name('usuarios.show')->middleware('auth');
+
+Route::get('/usuario/{usuario}/edit',[UserController::class,'edit'])->name('usuarios.edit')->middleware('auth');
+Route::patch('/usuario/{usuario}',[UserController::class,'update'])->name('usuarios.update')->middleware('auth');
+
+
 
 
 

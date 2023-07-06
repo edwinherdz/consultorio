@@ -58,4 +58,9 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Consultorio::class);
     }
+
+    public function getRouteKeyName() 
+    {
+        return 'id';
+    }
 }

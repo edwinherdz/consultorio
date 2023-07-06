@@ -8,8 +8,14 @@ use App\Http\Requests\SaveUserRequest;
 
 class UserController extends Controller
 {
-    public function show() {
-        return view('usuarios.show');
+    public function show(User $user) {
+
+        return view('usuarios.show', [
+            'user'=>$user
+
+        ]);
+
+
     }
 
 
@@ -25,7 +31,8 @@ class UserController extends Controller
     public function update(User $user , SaveUserRequest $request)
     {
        $user->update($request->validated());
-       return redirect()->route('usuarios.show',$user); 
+       return $user;
+       return redirect()->route('usuarios.show'); 
     }
 
 }
