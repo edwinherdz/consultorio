@@ -55,7 +55,7 @@
                 <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-zip">
                     Presión Arterial
                 </label>
-                <input name="cpresion" value="{{ old('cpresion',$consulta->cpresion ) }}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" type="number" placeholder="Indique la presión arterial del paciente">
+                <input name="cpresion" value="{{ old('cpresion',$consulta->cpresion ) }}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" type="text" placeholder="Indique la presión arterial del paciente">
             </div>
             <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
                 <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-city">

@@ -24,29 +24,29 @@
                         <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
                             <thead class="bg-gray-50 dark:bg-gray-800">
                                 <tr>
-                                    <th scope="col" class=" cursor-pointer py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400" wire:click="order('id')">
+                                    <th scope="col" class=" cursor-pointer py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-100" wire:click="order('id')">
                                         
                                         Número de Paciente
                                     
                                 </th>
-                                    <th scope="col" class="cursor-pointer py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400 " wire:click="order('cnombre')">
+                                    <th scope="col" class="cursor-pointer py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-100 " wire:click="order('cnombre')">
                                         
                                             Nombre del paciente
                                         
                                     </th>
     
-                                    <th scope="col" class="cursor-pointer px-12 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400" wire:click="order('cprimerapellido')">
+                                    <th scope="col" class="cursor-pointer px-12 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-100" wire:click="order('cprimerapellido')">
                                         Primer Apellido
                                     </th>
     
-                                    <th scope="col" class="cursor-pointer px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400" wire:click="order('csegundoapellido')">
+                                    <th scope="col" class="cursor-pointer px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-100" wire:click="order('csegundoapellido')">
                                         Segundo Apellido
                                     </th>
     
-                                    <th scope="col" class="cursor-pointer px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"wire:click="order('consultas_count')"  >Total de consultas</th>
-                                    <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">Registró</th>
-                                    <th scope="col" class="cursor-pointer px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400" wire:click="order('created_at')">Creado hace</th>
-                                    <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">Acción</th>
+                                    <th scope="col" class="cursor-pointer px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-100"wire:click="order('consultas_count')"  >Total de consultas</th>
+                                    <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-100">Registró</th>
+                                    <th scope="col" class="cursor-pointer px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-100" wire:click="order('created_at')">Creado hace</th>
+                                    <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-100">Acción</th>
     
     
                                 </tr>
@@ -55,28 +55,28 @@
     
                             <tbody class="bg-white divide-y divide-gray-200 dark:divide-gray-700 dark:bg-gray-900">
                                 <tr>
-                                    <td class="px-4 py-4 text-sm whitespace-nowrap">
+                                    <td class="px-4 py-4 text-sm whitespace-nowrap dark:text-gray-100">
                                         <div>
                                             {{$paciente->id }}
                                         </div>
                                     </td>
-                                    <td class="px-4 py-4 text-sm whitespace-nowrap">
+                                    <td class="px-4 py-4 text-sm whitespace-nowrap dark:text-gray-100">
                                         <div>
                                             {{$paciente->cnombre }}
                                         </div>
                                     </td>
                                     <td class="px-4 py-4 text-sm whitespace-nowrap">
-                                        <div class="inline px-3 py-1 text-sm font-normal gap-x-2 dark:bg-gray-800">
+                                        <div class="inline px-3 py-1 text-sm font-normal gap-x-2 dark:text-gray-100">
                                             {{$paciente->cprimerapellido }}
                                         </div>
                                     </td>
                                     <td class="px-4 py-4 text-sm whitespace-nowrap">
-                                        <div class="inline px-3 py-1 text-sm font-normal gap-x-2 dark:bg-gray-800">
+                                        <div class="inline px-3 py-1 text-sm font-normal gap-x-2 dark:text-gray-100">
                                             {{$paciente->csegundoapellido }}
                                         </div>
                                     </td>
-                                    <td class="px-12 py-4 text-sm font-medium whitespace-nowrap">
-                                        <div class="inline px-3 py-1 text-sm font-normal rounded-full text-emerald-500 gap-x-2 bg-emerald-100/60 dark:bg-gray-800">
+                                    <td class="px-12 py-4 text-sm font-medium whitespace-nowrap dark:text-gray-100">
+                                        <div class="inline px-3 py-1 text-sm font-normal rounded-full text-emerald-500 gap-x-2 bg-emerald-100/60 dark:bg-gray-100">
                                             {{ ($paciente->consultas_count) }}
                                         </div>
                                     </td>

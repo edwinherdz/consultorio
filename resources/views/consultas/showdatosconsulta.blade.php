@@ -2,7 +2,7 @@
     <div class="pb-12 border-b border-gray-900/10">
         <p class="mt-1 text-sm leading-6 text-gray-700">Visualizando la información de la consulta</p>
 
-        <div class="flex flex-wrap mb-2 -mx-3">
+        <div class="flex flex-wrap mb-2 -mx-3 dark:bg-red-300">
             <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
                 <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-city">
                     Id Consulta
@@ -38,6 +38,12 @@
                     Edad
                 </label>
                 <input disabled name="" value="{{ $consulta->eedad}}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none disabled focus:outline-none focus:bg-white focus:border-gray-500" id="grid-zip" type="text" >
+            </div>
+            <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
+                <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-zip">
+                    Presión Arterial
+                </label>
+                <input disabled name="" value="{{ $consulta->cpresion}}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none disabled focus:outline-none focus:bg-white focus:border-gray-500" id="grid-zip" type="text" >
             </div>
             <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
                 <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-zip">
