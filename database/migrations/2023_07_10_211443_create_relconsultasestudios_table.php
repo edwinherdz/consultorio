@@ -18,7 +18,7 @@ return new class extends Migration
             $table->timestamps();
         
             $table->foreign('consulta_id')->references('id')->on('consultorios');
-            $table->foreign('estudio_id')->references('id')->on('estudiosmedicos');
+            $table->foreign('estudio_id')->references('id')->on('estudios');
 
         });
     }
