@@ -24,29 +24,31 @@
 
                             </div>
                             <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
-                                <h3 class="text-base font-semibold leading-6 text-gray-900" id="modal-title">Indica Estudios para el paciente</h3>
-                                <div class="mt-2">
+                                <form action="" method="POST">
+                                    @csrf
+                                <h3 class="text-base font-semibold leading-6 text-gray-900" id="modal-title">Catálogo de Estudios Médicos</h3>
+                                <div class="mt-2 column-count:4">
                                     @forelse($estudios as $estudio)
-                                    <div class="relative flex gap-x-3">
-                                        <div class="flex h-6 items-center">
-                                            <input id="comments" name="comments" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+
+                                    <div class="relative flex gap-x-3 grid grid-cols-4 gap-4 border border-gray-100">
+                                        <div class="flex h-6 items-center grid grid-cols-4 gap-4 border-gray-100">
+                                            <input id="estudio" name="comments" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                         </div>
-                                        <div class="text-sm leading-6">
+                                        <div class="text-sm leading-6 grid-cols-8">
                                             <label for="cnombre" class="font-medium text-gray-900">{{$estudio->cnombre}}</label>
                                         </div>
                                     </div>
-
-
                                     @empty
-                                    <h3 class="text-base font-semibold leading-6 text-gray-900" id="modal-title">No hay estudios registrados/Activos en el catálogo de Estudios Médicos.</h3>
+                                    <h3 class="text-base font-semibold leading-6 text-gray-900" id="modal-title">No hay estudios registrados/Activos en el catálogo.</h3>
                                     @endforelse
 
                                 </div>
                             </div>
+                        </form>
                         </div>
                     </div>
                     <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
-                        <button  disable type="button" class="inline-flex w-full justify-center rounded-md bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-500 sm:ml-3 sm:w-auto">Guardar</button>
+                        <button  wire:click="store()" disable type="button" class="inline-flex w-full justify-center rounded-md bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-500 sm:ml-3 sm:w-auto">Guardar</button>
                         <button wire:click="cerrarmodal" type="button" class="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto">Cerrar</button>
                     </div>
                 </div>

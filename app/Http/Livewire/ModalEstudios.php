@@ -2,7 +2,9 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Detalleconsultaestudio;
 use App\Models\Estudio;
+use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 
 class ModalEstudios extends Component
@@ -19,5 +21,13 @@ class ModalEstudios extends Component
 
             $this->open=false;
     
+    }
+
+    public function store() {
+
+        Detalleconsultaestudio::create();
+         return redirect()->route('consultas.index');
+
+        
     }
 }
