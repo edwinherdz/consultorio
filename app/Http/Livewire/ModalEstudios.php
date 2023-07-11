@@ -13,7 +13,7 @@ class ModalEstudios extends Component
     public $open=false;
     public function render()
     {
-        $estudios=Estudio::get();
+        $estudios=Estudio::where('lactivo',1)->get();
         return view('livewire.modal-estudios',compact('estudios'));
     }
 
