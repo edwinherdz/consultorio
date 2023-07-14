@@ -19,23 +19,14 @@
                      </span>
                  </a>
              </div>
-             <div class="">
-                 <div class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
-                     <div id="menu-button" aria-expanded="true" aria-haspopup="true" >
-                         <a href="{{route('usuarios.show',auth()->user()->id)}}">Hola {{ auth()->user()->name }}</a>
-                     </div>
-                     <div id="menu-button" aria-expanded="true" aria-haspopup="true">
-                         <a href="#" onclick="event.preventDefault();
-                        document.getElementById('logout-form').submit();"
-                        >Cerrar Sesión</a>
-                    </div>
 
-                </div>
 
-            </div>
-        </div>
-</nav>
+             @livewire('menu-user')
 
-<form id="logout-form" action=" {{ route('logout') }}" method="POST" style="diplay:none">
-                             @csrf
-                             </form>
+         </div>
+     </div>
+ </nav>
+
+ <form id="logout-form" action=" {{ route('logout') }}" method="POST" style="diplay:none">
+     @csrf
+ </form>
