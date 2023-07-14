@@ -39,7 +39,7 @@
                                         </div>
                                     </div>
                                     @empty
-                                    <h3 class="text-base font-semibold leading-6 text-gray-900" id="modal-title">No hay estudios registrados/Activos en el catálogo.</h3>
+                                    <h3 class="text-base font-semibold leading-6 text-gray-900" id="modal-title">No hay estudios médicos registrados y/o activos.</h3>
                                     @endforelse
 
                                 </div>
