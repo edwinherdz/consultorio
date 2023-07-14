@@ -7,7 +7,9 @@ use App\Http\Controllers\ConsultaController;
 use App\Http\Controllers\ConsultorioController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\EstudioController;
 use App\Http\Controllers\UserController;
+use App\Models\Estudio;
 
 Route::view('/','home')->name('home')->middleware('auth');
 
@@ -25,6 +27,7 @@ Route::get('/usuario/{usuario}/edit',[UserController::class,'edit'])->name('usua
 Route::patch('/usuario/{usuario}',[UserController::class,'update'])->name('usuarios.update')->middleware('auth');
 
 Route::resource('consultorio', ConsultorioController::class)->names('consultorios')->middleware('auth');
+Route::resource('estudio', EstudioController::class)->names('estudios')->middleware('auth');
 
 
 

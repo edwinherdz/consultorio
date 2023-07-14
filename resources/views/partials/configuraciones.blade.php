@@ -13,6 +13,9 @@
     <div>
         <a href="{{route('consultorios.show',auth()->user()->consultorio_id)}}"> Ver datos del consultorio.</a>
     </div>
+    <div>
+        <a href="{{route('estudios.index')}}"> Ver catálogo de estudios médicos.</a>
+    </div>
     @endempty
     
 </div>
