@@ -18,7 +18,7 @@ class Consultorio extends Model
 
     public function getRouteKeyName() 
     {
-        return 'cnombreconsultorio';
+        return 'id';
     }
 
     public function users()
