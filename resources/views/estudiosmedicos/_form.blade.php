@@ -9,15 +9,15 @@
         <dl class="divide-y divide-gray-100">
             <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                 <dt class="text-sm font-medium leading-6 text-gray-900">Nombre del Estudio Médico</dt>
-                <input {{ request()->RouteIs('estudios.show') ? 'disabled' : ''}} name="cnombre" value="{{ $estudio->cnombre }}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" type="text">
+                <input {{ request()->RouteIs('estudios.show') ? 'disabled' : ''}} name="cnombre" value="{{ old('cnombre',$estudio->cnombre) }}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" type="text">
             </div>
             <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                 <dt class="text-sm font-medium leading-6 text-gray-900">Descripción del Estudio Médico</dt>
-                <input {{ request()->RouteIs('estudios.show') ? 'disabled' : ''}} name="cdescripcion" value="{{ $estudio->cdescripcion}}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" type="text">
+                <input {{ request()->RouteIs('estudios.show') ? 'disabled' : ''}} name="cdescripcion" value="{{ old('cdescripcion',$estudio->cdescripcion)}}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" type="text">
             </div>
             <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                 <dt class="text-sm font-medium leading-6 text-gray-900">Fecha de Creación</dt>
-                <input {{ request()->RouteIs('estudios.show') ? 'disabled' : ''}} name="created_at" value="{{ $estudio->created_at->format('d-m-Y') }}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" type="text">
+                <input {{ request()->RouteIs('estudios.show') ? 'disabled' : ''}} name="created_at" value="{{ old('created_at',$estudio->created_at) }}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" type="text">
             </div>
             <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                 <dt class="text-sm font-medium leading-6 text-gray-900">Estado del Estudio Médico</dt>

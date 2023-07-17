@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('cnombre');
             $table->mediumText('cdescripcion')->nullable();
-            $table->boolean('lactivo');
+            $table->boolean('lactivo')->default('1');
             $table->timestamps();
         });
         

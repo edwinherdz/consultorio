@@ -10,8 +10,7 @@ class Estudio extends Model
     Protected $fillable = [
 
         'cnombre',
-        'cdescripcion',
-        'lactivo'];
+        'cdescripcion'];
         
     public  function getRouteKeyName() {
 

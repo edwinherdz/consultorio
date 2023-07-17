@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SaveEstudioMedicoRequest;
 use App\Models\Estudio;
 use Illuminate\Http\Request;
 
@@ -20,15 +21,20 @@ class EstudioController extends Controller
      */
     public function create()
     {
-        //
+        return view('estudiosmedicos.create', [
+            'estudio' => new Estudio
+        ]);
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(SaveEstudioMedicoRequest $request)
     {
-        //
+        
+        Estudio::create($request->validated());
+        return redirect()->route('estudios.index');
+
     }
 
     /**
@@ -44,17 +50,20 @@ class EstudioController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Estudio $estudio)
     {
-        //
+        return view('estudiosmedicos.edit',[
+            'estudio' => $estudio
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(SaveEstudioMedicoRequest $request, Estudio $estudio)
     {
-        //
+        $estudio->update($request->validated());
+        return redirect()->route('estudios.show',$estudio); 
     }
 
     /**

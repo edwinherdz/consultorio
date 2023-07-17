@@ -9,11 +9,11 @@
         <dl class="divide-y divide-gray-100">
             <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                 <dt class="text-sm font-medium leading-6 text-gray-900">Nombre del consultorio</dt>
-                <input {{ request()->RouteIs('consultorios.show') ? 'disabled' : ''}} name="cnombreconsultorio" value="{{ $consultorio->cnombreconsultorio }}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" type="text">
+                <input {{ request()->RouteIs('consultorios.show') ? 'disabled' : ''}} name="cnombreconsultorio" value="{{ old('cnombreconsultorio',$consultorio->cnombreconsultorio) }}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" type="text">
             </div>
             <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                 <dt class="text-sm font-medium leading-6 text-gray-900">Descripción del consultorio</dt>
-                <input {{ request()->RouteIs('consultorios.show') ? 'disabled' : ''}} name="cdescripcion" value="{{ $consultorio->cdescripcion }}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" type="text">
+                <input {{ request()->RouteIs('consultorios.show') ? 'disabled' : ''}} name="cdescripcion" value="{{ old('cdescripcion',$consultorio->cdescripcion) }}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" type="text">
             </div>
             <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                 <dt class="text-sm font-medium leading-6 text-gray-900">Dirección</dt>
@@ -21,11 +21,11 @@
             </div>
             <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                 <dt class="text-sm font-medium leading-6 text-gray-900">Teléfono</dt>
-                <input {{ request()->RouteIs('consultorios.show') ? 'disabled' : ''}} name="ctelefono" value="{{ $consultorio->ctelefono }}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" type="tel">
+                <input {{ request()->RouteIs('consultorios.show') ? 'disabled' : ''}} name="ctelefono" value="{{ old('ctelefono',$consultorio->ctelefono) }}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" type="tel">
             </div>
             <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                 <dt class="text-sm font-medium leading-6 text-gray-900">E-mail</dt>
-                <input {{ request()->RouteIs('consultorios.show') ? 'disabled' : ''}} name="cemail" value="{{ $consultorio->cemail  }}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" type="email">
+                <input {{ request()->RouteIs('consultorios.show') ? 'disabled' : ''}} name="cemail" value="{{ old('cemail',$consultorio->cemail)  }}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" type="email">
             </div>
         </dl>
     </div>
