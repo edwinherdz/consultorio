@@ -5,25 +5,40 @@
         <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-city">
             Nombre
         </label>
-        <input {{request()->routeIs('usuarios.edit') ? '' : 'disabled'}} name="name" value="{{ auth()->user()->name }}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="text" >
+        <input {{request()->routeIs('usuarios.edit') ? '' : 'disabled'}} name="name" value="{{ $usuario->name }}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="text">
     </div>
     <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
         <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-city">
             email
         </label>
-        <input {{request()->routeIs('usuarios.edit') ? '' : 'disabled'}} name="email" value="{{ auth()->user()->email}}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none disabled focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="text" >
+        <input {{request()->routeIs('usuarios.edit') ? '' : 'disabled'}} name="email" value="{{ $usuario->email}}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none disabled focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="text">
     </div>
     <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
         <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-zip">
             Consultorio asignado
         </label>
-        <input {{request()->routeIs('usuarios.edit') ? '' : 'disabled'}} name="consultorio_id" value="{{ auth()->user()->consultorio->cnombreconsultorio}}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none disabled focus:outline-none focus:bg-white focus:border-gray-500" id="grid-zip" type="text" >
+
+        @if (request()->routeIs('usuarios.show'))
+        <input {{request()->routeIs('usuarios.edit') ? '' : 'disabled'}} name="consultorio_id" value="{{ $usuario->consultorio->cnombreconsultorio}}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none disabled focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="text">
+        @else
+        <select name="consultorio_id" id="consultorios" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded focus:outline-none focus:bg-white focus:border-gray-500">
+
+            @foreach($consultorios as $consultorio)
+            <option value="{{$consultorio->id}}"> {{$consultorio->cnombreconsultorio}} </option> 
+            @endforeach
+    
+            </select>
+        @endif
+        
+       
+
+
     </div>
     <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
         <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-zip">
             Creado
         </label>
-        <input disabled  value="{{ auth()->user()->created_at}}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none disabled focus:outline-none focus:bg-white focus:border-gray-500" id="grid-zip" type="text" >
+        <input disabled value="{{ auth()->user()->created_at}}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none disabled focus:outline-none focus:bg-white focus:border-gray-500" id="grid-zip" type="text">
     </div>
 </div>
 <div class="flex justify-end mt-6 itemscenter gap-x-6">

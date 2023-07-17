@@ -23,8 +23,7 @@ Route::get('/consulta/pdf/{consulta}',[PdfController::class,'pdf'])->name('consu
 Route::get('/usuario/show/{usuario}',[UserController::class,'show'])->name('usuarios.show')->middleware('auth');
 Route::resource('consultorio', ConsultorioController::class)->names('consultorios')->middleware('auth');
 
-Route::get('/usuario/{usuario}/edit',[UserController::class,'edit'])->name('usuarios.edit')->middleware('auth');
-Route::patch('/usuario/{usuario}',[UserController::class,'update'])->name('usuarios.update')->middleware('auth');
+Route::resource('usuarios',UserController::class)->names('usuarios')->middleware('auth');
 
 Route::resource('consultorio', ConsultorioController::class)->names('consultorios')->middleware('auth');
 Route::resource('estudio', EstudioController::class)->names('estudios')->middleware('auth');
