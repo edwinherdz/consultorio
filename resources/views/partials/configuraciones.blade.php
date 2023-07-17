@@ -1,21 +1,59 @@
 <div>
     <div class="px-4 sm:px-0">
-        <h3 class="text-base font-semibold leading-7 text-gray-900">configuracion del consultorio</h3>
+        <h1 class="text-base font-semibold leading-7 text-gray-900">Configuraciones</h1>
         <p class="max-w-2xl mt-1 text-sm leading-6 text-gray-500">Detalles de configuracion del consultorio</p>
     </div>
 
-    @empty(auth()->user()->consultorio_id)
-        
+    {{-- @empty(auth()->user()->consultorio_id)
+
     <div>
         <a href="{{route('consultorios.create')}}"> Crear Consultorio</a>
+</div>
+@else
+<div>
+    <a href="{{route('consultorios.show',auth()->user()->consultorio_id)}}"> Configurar consultorio.</a>
+</div>
+@endempty
+<div>
+    <a href="{{route('estudios.index')}}"> Configurar catálogo Estudio médico.</a>
+</div> --}}
+
+
+
+<div class="flex flex-row space-x-4 ">
+    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 hover:bg-sky-100">
+        <div class="p-5">
+            <a href="{{route('consultorios.show',auth()->user()->consultorio_id)}}">
+                <h5 class="mb-2 text-2xl tracking-tight text-gray-900 dark:text-white hover:bg-sky-100">Datos del consultorio</h5>
+            </a>
+            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Modulo de administración del consultorio</p>
+        </div>
     </div>
-    @else
-    <div>
-        <a href="{{route('consultorios.show',auth()->user()->consultorio_id)}}"> Configurar consultorio.</a>
+
+    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 hover:bg-sky-100">
+        <div class="p-5">
+            <a href="{{route('estudios.index')}}">
+                <h5 class="mb-2 text-2xl tracking-tight text-gray-900 dark:text-white">Catálogo de Estudios Médicos</h5>
+            </a>
+            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Módulo de administració del catálogo de Estudios Médicos</p>
+        </div>
     </div>
-    @endempty
-    <div>
-        <a href="{{route('estudios.index')}}"> Configurar catálogo Estudio médico.</a>
-    </div>
-    
+    {{-- <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <a href="#">
+                <img class="rounded-t-lg" src="/docs/images/blog/image-1.jpg" alt="" />
+            </a>
+            <div class="p-5">
+                <a href="#">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
+                </a>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+                <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    Read more
+                    <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                    </svg>
+                </a>
+            </div>
+        </div> --}}
+</div>
 </div>
