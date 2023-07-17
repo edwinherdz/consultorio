@@ -29,8 +29,6 @@ Route::patch('/usuario/{usuario}',[UserController::class,'update'])->name('usuar
 Route::resource('consultorio', ConsultorioController::class)->names('consultorios')->middleware('auth');
 Route::resource('estudio', EstudioController::class)->names('estudios')->middleware('auth');
 
-
-
 // Route::get('/consulta',[ConsultaController::class,'index'])->name('consultas.index')->middleware('auth');
 // Route::get('/paciente',[PacienteController::class,'index'])->name('pacientes.index')->middleware('auth');
 

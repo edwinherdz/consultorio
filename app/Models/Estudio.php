@@ -15,7 +15,7 @@ class Estudio extends Model
         
     public  function getRouteKeyName() {
 
-        return 'cnombre';
+        return 'id';
         
     }
         

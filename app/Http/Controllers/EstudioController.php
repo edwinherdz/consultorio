@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Estudio;
 use Illuminate\Http\Request;
 
 class EstudioController extends Controller
@@ -11,7 +12,7 @@ class EstudioController extends Controller
      */
     public function index()
     {
-        //
+        return view('estudiosmedicos.index');
     }
 
     /**
@@ -33,9 +34,11 @@ class EstudioController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Estudio $estudio)
     {
-        //
+        return view('estudiosmedicos.show',[
+            'estudio'=>$estudio]);
+
     }
 
     /**
