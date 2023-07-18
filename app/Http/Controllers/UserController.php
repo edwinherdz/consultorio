@@ -24,7 +24,8 @@ class UserController extends Controller
         
         $consultorios=Consultorio::all();
         return view('usuarios.edit',[
-            'usuario'=> $usuario,'consultorios'=>$consultorios
+            'usuario'=> $usuario,
+            'consultorios'=>$consultorios
             //'Pacientes'=>Paciente::pluck('cnombre','id')
         ]);
     }
@@ -41,4 +42,30 @@ class UserController extends Controller
 
         return view('usuarios.index');
     }
+    
+    public function create()
+    {
+        $consultorios=Consultorio::all();
+        return view('usuarios.create', [
+            'usuario' => new User,
+            'consultorios'=>$consultorios
+
+        ]);
+    }
+
+    public function store(SaveUserRequest $request)
+    {
+    
+        User::create($request->validated());
+         return redirect()->route('usuarios.index');
+
+
+
+        //  return User::create([
+        //     'name' => $data['name'],
+        //     'email' => $data['email'],
+        //     'password' => Hash::make($data['password']),
+    }
+
+
 }

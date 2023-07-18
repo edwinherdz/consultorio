@@ -3,6 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rule;
 
 class SaveUserRequest extends FormRequest
 {
@@ -22,10 +24,10 @@ class SaveUserRequest extends FormRequest
     public function rules(): array
     {
         return [
-            
-                'name'=>'required',
-                'email'=>'required',
-                'consultorio_id'=>'required',
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users')->ignore($this->route('usuarios'))],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'consultorio_id'=> ['required']
         ];
     }
 }

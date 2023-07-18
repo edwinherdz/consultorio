@@ -4,7 +4,7 @@
 
 @section('content')
 
-{{-- @include('consultas.barraherramientas') --}}
+@include('estudiosmedicos.barraherramientas')
 
 <button><a href="{{route('estudios.edit',$estudio)}}">Editar Estudio Médico</a></button>
 
