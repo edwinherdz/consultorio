@@ -29,7 +29,7 @@ class SavePacienteRequest extends FormRequest
             'dfechanacimiento'=>'required',
             'csexo'=>'required',
             'cemail'=>['required',
-            Rule::unique('pacientes')->ignore($this->route('paciente'))],
+            Rule::unique('pacientes')->ignore($this->route('usuarios'))],
             'user_id'=>'required',
             'ctelefono'=>'nullable','max:10',
             'cobservacion'=>'nullable','max:500',

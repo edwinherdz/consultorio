@@ -7,7 +7,7 @@
 @include('partials.validation-errors')
 
 
-<form  method='POST' action=" {{route('usuarios.update',auth()->user()->id)}} ">
+<form  method='POST' action=" {{route('usuarios.update',$usuario)}} ">
 @method('PATCH')
     
     @include('usuarios.form',['btnText'=>'Actualizar','btnTextCancel'=>'Cancelar'] )

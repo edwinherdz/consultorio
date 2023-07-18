@@ -25,7 +25,7 @@ class SaveUserRequest extends FormRequest
     {
         return [
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users')->ignore($this->route('usuarios'))],
+            'email' => ['required',Rule::unique('users')->ignore($this->route('usuario')), 'string', 'email', 'max:255'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'consultorio_id'=> ['required']
         ];
