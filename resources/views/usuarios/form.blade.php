@@ -17,13 +17,13 @@
         <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-city">
             Contraseña
         </label>
-        <input {{request()->routeIs('usuarios.show') ? 'disabled' : ''}} name="password" value="{{ $usuario->email}}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none disabled focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="text">
+        <input {{request()->routeIs('usuarios.show') ? 'disabled' : ''}} name="password" value="" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none disabled focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="text">
     </div>
     <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
         <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-city">
             Confirmar Contraseña
         </label>
-        <input {{request()->routeIs('usuarios.show') ? 'disabled' : ''}} name="password_confirmation" value="{{ $usuario->email}}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none disabled focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="text">
+        <input {{request()->routeIs('usuarios.show') ? 'disabled' : ''}} name="password_confirmation" value="" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none disabled focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="text">
     </div>
     <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
         <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-zip">
@@ -53,7 +53,7 @@
         <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-zip">
             Creado
         </label>
-        <input disabled value="{{ auth()->user()->created_at}}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none disabled focus:outline-none focus:bg-white focus:border-gray-500" id="grid-zip" type="text">
+        <input disabled value="{{ $usuario->created_at}}" class="block w-full px-4 py-3 leading-tight text-gray-700 border border-gray-200 rounded appearance-none disabled focus:outline-none focus:bg-white focus:border-gray-500" id="grid-zip" type="text">
     </div>
 </div>
 <div class="flex justify-end mt-6 itemscenter gap-x-6">
